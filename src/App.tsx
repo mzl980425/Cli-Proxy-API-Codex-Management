@@ -1,15 +1,10 @@
-import { Outlet, RouterProvider, createHashRouter } from 'react-router-dom';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
 import HomePage from '@/pages/HomePage';
-
-function RootShell() {
-  return <Outlet />;
-}
+import MicroApp from '@/pages/MicroApp';
 
 const router = createHashRouter([
-  {
-    element: <RootShell />,
-    children: [{ path: '/', element: <HomePage /> }],
-  },
+  { path: '/', element: <HomePage /> },
+  { path: '*', element: <MicroApp /> },
 ]);
 
 function App() {
